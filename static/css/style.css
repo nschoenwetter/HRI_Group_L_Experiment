@@ -1,0 +1,228 @@
+/* // Labels below slider */
+.range-labels-5 {
+  margin: 18px -46px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.range-labels-7 {
+  margin: 18px -30px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.range-labels-7 li {
+  position: relative;
+  float: left;
+  width: 88px;
+  text-align: center;
+  color: #36454f;
+  font-size: 14px;
+}
+
+.range-labels-5 li {
+  position: relative;
+  float: left;
+  width: 130px;
+  text-align: center;
+  color: #36454f;
+  font-size: 14px;
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: #b2b2b2;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: #b2b2b2;
+}
+
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: #b2b2b2;
+}
+
+
+
+.rangeholder {
+  position: relative;
+  width: 550px;
+  height: 5px;
+}
+.rangeholder input {
+  width: 100%;
+  position: absolute;
+  top: 2px;
+  height: 0;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+}
+.rangeholder input:focus {
+  background: none;
+  outline: none;
+}
+
+
+.rangeholder input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+      -moz-apperance: none;
+}
+
+.rangeholder input::-moz-slider-thumb {
+    -webkit-appearance: none;
+      -moz-apperance: none;
+}
+
+
+.rangeholder input::-ms-thumb {
+    -webkit-appearance: none;
+      -moz-apperance: none;
+}
+
+
+/* Special styling for WebKit/Blink */
+.clicked::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #37adbf;
+  cursor: pointer;
+  border: 0 !important;
+}
+.not-clicked::-webkit-slider-thumb {
+  height: 0px;
+  width: 0px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #37adbf;
+  cursor: pointer;
+  border: 0 !important;
+}
+/* All the same stuff for Firefox */
+.clicked::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #37adbf;
+  cursor: pointer;
+  border: 0 !important;
+}
+.not-clicked::-moz-range-thumb {
+  height: 0px;
+  width: 0px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #37adbf;
+  cursor: pointer;
+  border: 0 !important;
+}
+
+.clicked::-ms-thumb {
+  height: 24px;
+  width: 24px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #37adbf;
+  cursor: pointer;
+  border: 0 !important;
+}
+.not-clicked::-ms-thumb {
+  height: 0px;
+  width: 0px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #37adbf;
+  cursor: pointer;
+  border: 0 !important;
+}
+
+
+body {
+    padding:0px;
+    margin: 0px;
+    background-color: white;
+    color: black;
+    font-weight: 300; 
+    font-size: 13pt;
+}
+
+
+/* text styling */
+strong {
+  font-weight: 600;         
+}
+
+.warm {
+  color: steelblue;
+  text-align: justify;
+}
+
+.cool {
+  color: #ccccff;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+
+/* these are all the same for now, but easy to modify individually */
+#container-not-an-ad, #container-error, #container-exp, #container-consent, #container-instructions, #container-questionnaire {
+    background: white;
+    margin: 30px;
+}
+
+/* ad.html  - the ad that people view first */
+#adlogo {
+    width: 140px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    margin-right: 1em;
+}
+
+/* consent.html - the consent form */
+#consent {
+  margin: 0 auto;
+  margin-top: 0;
+  width: 800px;
+  font-size: 100%;
+}
+
+.legal {
+  text-align: justify;
+  font-size: 11pt;
+  line-height: 1.1em;
+}
+
+#trial {
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+
+#query {
+  color: darkgray;
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+/* errors */
+#error img {
+  padding-right: 10px;
+  padding-top: 15px;
+}
