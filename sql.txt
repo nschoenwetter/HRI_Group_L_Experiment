@@ -1,0 +1,4 @@
+mysql -uroot -p
+CREATE USER 'mirrorlab'@127.0.0.1 IDENTIFIED BY 'backwardsr';
+CREATE DATABASE mirrorlabdb;
+GRANT ALL PRIVILEGES ON  mirrorlabdb.* to 'mirrorlab'@127.0.0.1;

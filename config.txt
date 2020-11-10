@@ -1,0 +1,48 @@
+[HIT Configuration]
+title = Effects of Assertiveness in Human-Robot Interaction.
+description = Answer questions about an interaction with a NAO robot playing games.
+amt_keywords = Psychology, Philosophy, Trust, Robot, Robots, Ethics, Language, Interaction
+lifetime = 24
+us_only = true
+approve_requirement = 80
+contact_email_on_error = twilliams@mines.edu
+ad_group = Default psiTurk Robot Ethics
+psiturk_keywords = ethics, robots, trust, interaction
+organization_name = MIRRORLab @ Colorado School of Mines
+browser_exclude_rule = MSIE, mobile, tablet
+allow_repeats = false
+
+[Database Parameters]
+
+#database_url = sqlite:///clarification.db
+database_url = postgres://asyudzoohjsfac:ec945cfcafd8a84b600a526a773217eab4b72138bb7b150fcc4cfc508dc84861@ec2-54-158-222-248.compute-1.amazonaws.com:5432/dehpk6oeq3sdqk
+
+[Server Parameters]
+host = 0.0.0.0
+#host = localhost
+port = 22362
+cutoff_time = 60
+logfile = server.log
+loglevel = 2
+debug = true
+login_username = examplename
+login_pw = examplepassword
+threads = 1
+secret_key = 'change this'
+
+[Task Parameters]
+experiment_code_version = 1.0
+num_conds = 16
+num_counters = 1
+
+[Shell Parameters]
+launch_in_sandbox_mode = true
+
+# If you are not using the psiturk ad server, set `use_psiturk_ad_server` to `false` and point `ad_location` to your proxy server <host> and <port>. Format the ad_location like this:
+#
+#   https://<host>:<port>/ad
+
+use_psiturk_ad_server = false
+# Your heroku app url
+ad_location = https://gentle-beach-49226.herokuapp.com/pub
+# ad_location = https://frozen-wave-83600.herokuapp.com/pub Example heroku app url
