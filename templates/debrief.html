@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+        <meta charset="utf-8" />
+	<title>Debriefing</title>
+	<link rel="stylesheet" href="/static/css/task.css" type="text/css" media="screen" />
+</head>
+<body>
+	<div id="debriefing">
+		<h1>Debriefing</h1>
+
+		<div id="debriefingtext">
+		<p>Thank you for your participation in our study!  Your anonymous data makes an
+		important contribution to our understanding of robot ethics.</p>
+
+		<p>In this research we were particularly interested in
+		how people perceive robots that respond to uncertain
+		or ambiguous commands to perform impermissible
+		actions. This is important because some robots ask for
+		clarification whenever they are unsure how to
+		interpret an utterance, and by doing so, may
+		incorrectly communicate their own ethical programming
+		or the true moral and social norms of their environments.
+		</p>
+		
+		<p>If you have any questions about this research, you may contact the
+		principal investigator, Tom Williams, at twilliams@mines.edu.</p>
+		</div>
+
+			<p class="cool">Do you agree to the following statement?</p>
+			<div id="affirmationbox">
+				<p>I feel that I have been adequately debriefed about the nature
+					of the study.  The investigator has explained the purposes of the
+					research to me, and I feel that any questions I have asked were
+					satisfactorily answered.</p>
+					<table><tr>
+						<td id="affirmative" onClick="javascript:document.forms['accept'].submit()">Yes, I agree.</td>
+						<td id="negative" onClick="javascript:document.forms['decline'].submit()">No, please withhold my data. I will contact the experimenter with questions.</td>
+					</tr></table> 
+					<form id="accept" action="complete" method="post">
+						<input type="hidden" name="uniqueid" value="{{ uniqueId }}" />
+						<input type="hidden" name="agree" value="true" />
+					</form>
+					<form id="decline" action="complete" method="post">
+						<input type="hidden" name="uniqueid" value="{{ uniqueId }}" />
+						<input type="hidden" name="agree" value="false" />
+					</form>
+			</div>
+	</div>
+</body>
+
+</html>

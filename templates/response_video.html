@@ -1,0 +1,66 @@
+<div id="container-instructions">
+
+      <p>
+      Here is one way the robot could respond to the user's command.
+      Please pay close attention to the robot in this video and prepare to anwer questions about its response.
+      </p>
+
+      <button id="ppbutton" onclick="playPause()">Play/Pause</button>
+      <button id="rsbutton" onclick="restart()">Restart</button>
+      <p id="time" style="display:inline">Video progress:  0:00</p>
+      <br>
+
+      <video id="video3" width="960" style="margin: 0 auto; border: 9px solid #ddd;">
+          <source id="mp4src" src="" type="video/mp4">
+          <source id="oggsrc" src="" type="video/ogg">
+          Your browser does not support HTML5 video.
+      </video>
+
+    <script>
+        var myVideo = document.getElementById("video3");
+
+        function playPause() {
+
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        }
+
+        function restart() {
+            myVideo.load();
+            myVideo.currentTime = 0;
+            myVideo.play();
+        }
+
+        var gTimeFormat = function(seconds){
+	        var m = Math.floor(seconds / 60);
+	        var s = Math.floor(seconds - (m * 60)) < 10 ? '0' + Math.floor(seconds - (m * 60)) : Math.floor(seconds - (m * 60));
+	        return m + ':' + s;
+        };
+
+        myVideo.ontimeupdate = function() {timeupdate()};
+
+        function timeupdate() {
+            document.getElementById("time").innerHTML = "Video progress:  "+gTimeFormat(myVideo.currentTime)+"/"+gTimeFormat(myVideo.duration);
+        }
+        //myVideo.load();
+    </script>
+
+
+    <div class="instructionsnav">
+        <div class="row">
+            <div class="col-xs-2">
+            	<!-- no previous button -->
+            </div>
+            <div class="col-xs-8">
+            </div>
+            <div class="col-xs-2">
+                <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue" disabled="disabled">
+                Next <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

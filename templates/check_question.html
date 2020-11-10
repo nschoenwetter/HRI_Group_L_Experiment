@@ -1,0 +1,104 @@
+<style>
+    .cc-selector-2 input{
+        position:absolute;
+        z-index:999;
+    }
+
+    .baxter{
+        background-image:url("/static/images/baxter.png");
+        width:320px;
+        height:319px;
+     }
+    .nao{
+        background-image:url("/static/images/nao.png");
+        width:172px;
+        height:323px;
+     }
+    .pepper{
+        background-image:url("/static/images/pepper.png");
+        width:152px;
+        height:349px;
+    }
+    .jackal{
+        background-image:url("/static/images/jackal.png");
+        width:394px;
+        height:350px;
+    }
+
+    .cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: 1.0;}
+    .cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+        -webkit-filter: none;
+        -moz-filter: none;
+        filter: none;
+    }
+    
+    .drinkcard-cc{
+        cursor:pointer;
+        background-size:contain;
+        background-repeat:no-repeat;
+        display:inline-block;
+        -webkit-transition: all 100ms ease-in;
+           -moz-transition: all 100ms ease-in;
+                transition: all 100ms ease-in;
+        -webkit-filter: brightness(1.1) grayscale(0.5) opacity(.85);
+           -moz-filter: brightness(1.1) grayscale(0.5) opacity(.85);
+                filter: brightness(1.1) grayscale(0.5) opacity(.85);
+    }
+    
+    .drinkcard-cc:hover{
+        -webkit-filter: brightness(1.0) grayscale(.5) opacity(1.0);
+        -moz-filter: brightness(1.0) grayscale(.5) opacity(1.0);
+        filter: brightness(1.0) grayscale(.5) opacity(1.0);
+    }
+
+    a:visited{color:#888}
+    a{color:#444;text-decoration:none;}
+    p{margin-bottom:.3em;}
+</style>
+
+
+<div id="container-instructions">
+
+    <h1>Final Check Question</h1>
+
+    <hr />
+
+    <div class="instructions well">
+        <p>Which robot was present in the previous videos?</p>
+        <form id="checkquestion" action="">
+        
+            <div class="cc-selector-2">
+                <input id="baxter" type="radio" name="check" value="1" />
+                <label class="drinkcard-cc baxter" for="baxter"></label>
+                <input id="nao" type="radio" name="check" value="2" />
+                <label class="drinkcard-cc nao"for="nao"></label>
+                <br/>
+                <input id="pepper" type="radio" name="check" value="3" />
+                <label class="drinkcard-cc pepper"for="pepper"></label>
+                <input id="jackal" type="radio" name="check" value="4" />
+                <label class="drinkcard-cc jackal"for="jackal"></label>
+            </div>
+            
+        </form>
+
+    </div>
+
+    <hr />
+
+
+   <div class="instructionsnav">
+        <div class="row">
+            <div class="col-xs-2">
+            	<!-- no previous button -->
+            </div>
+            <div class="col-xs-8">	      
+            </div>
+            <div class="col-xs-2">
+                <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue" disabled="disabled">
+                Continue <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

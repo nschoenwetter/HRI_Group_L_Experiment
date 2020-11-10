@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+  The consent.html displays the text of your IRB-approved
+  consent form.  Even if you are not required to provide
+  a consent form, it is helpful to use this form to
+  describe what people can do if an error comes up, etc...
+
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Experiment - Informed Consent Form</title>
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+        <script type="text/javascript">
+            function onexit() {
+              self.close(); // no harm, no foul here
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container-consent">
+            <div id="consent">
+                <h1>We need your consent to proceed</h1>
+                <hr />
+                <div class="legal well">
+                    <p>
+                    You have been invited to take part in a research study named "HRI-003-3"
+                    </p>
+                    <p>
+		      <b>Purpose of Research:</b>
+		      This research study is being conducted to
+		      collect data on how the type of language used by
+		      robots may impact humans' perceptions of those
+		      robots.
+		      <br/>
+		      <b>What you will do in this study:</b> If you
+		      decide to participate, you will first be asked
+		      to complete a brief demographic
+		      questionnaire, after which you will be presented
+		      with a video of a human-robot interaction scenario. You
+		      will then be asked to answer
+		      questions regarding the scenario. In order to
+		      progress through the study and receive your
+		      compensation code, you will be required to
+		      answer every question unless stated otherwise.
+		      <br/>
+		      <b>Time required:</b> The session will take
+		      approximately 5 minutes to complete.
+		      <br/>
+		      <b>Risks and discomfort:</b> There are no major
+			foreseeable risks with this study.
+		      <br/>
+		      <b>Benefits:</b> There are no direct personal
+		      benefits.
+		      <br/>
+		      <b>Compensation:</b> You will receive $1.00 for
+		      completion at the end of the study.
+		      <br/>
+		      <b>Confidentiality:</b> Your responses will be
+		      recorded but linked neither to personally
+		      identifiable nor worker information. The
+		      information will be kept strictly confidential
+		      and used only for research purposes. The
+		      documentation will be identifiable only by a
+		      randomly assigned ID number. All information
+		      will be kept on a secure web server.
+		      <br/>
+		      <b>Participation and Withdrawal:</b> Your
+		      participation is completely voluntary. Should
+		      you decide at any time you no longer wish to
+		      participate you may discontinue your
+		      participation without penalty.
+		      <br/>
+		      <b>To contact the researcher:</b> If you have
+		      questions or concerns about this research please
+		      contact the principal investigator: Tom
+		      Williams, MIRROR Lab, Colorado School of Mines,
+		      1600 Illinois St. Golden, CO, twilliams@mines.edu.
+		      <br/>
+		      <b>Whom to contact about your rights in this
+			research:</b> For questions, concerns,
+		      suggestions, or complaints that are not being
+		      addressed by the researcher, or
+		      research ­related harm, contact the Colorado
+		      School of Mines Human-Subject Research Office at
+		      humansubjects@mines.edu.
+		      <br/>
+		      You must be at least 18 years old to participate.
+		      By accepting this HIT, you confirm that you understand the above material, that you are willing to participate in
+		      this experiment, and that you allow us to use your data for scientific purposes, and may be published or
+		      otherwise shared with other researchers. No identifying information will ever be shared.
+                    </p>
+
+                    <button type="button" class="btn btn-default btn-sm" onClick="window.print();">
+                    <span class="glyphicon glyphicon-print"></span> Print a copy of this
+                    </button>
+                </div>
+
+                <hr />
+                <h4>Do you understand and consent to these terms?</h4>
+                <br />
+
+                <center>
+                    <button type="button" class="btn btn-primary btn-lg" onClick="window.location='/exp?hitId={{ hitid }}&assignmentId={{ assignmentid }}&workerId={{ workerid }}'">
+                    <span class="glyphicon glyphicon-ok"></span> I agree
+                    </button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger btn-lg" onClick="onexit()">
+                    <span class="glyphicon glyphicon-ban-circle"></span> No thanks, I do not want to do this HIT
+                    </button>
+                </center>
+
+            </div>
+        </div>
+    </body>
+</html>
