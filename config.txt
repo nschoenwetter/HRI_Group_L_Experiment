@@ -14,12 +14,12 @@ allow_repeats = false
 
 [Database Parameters]
 
-#database_url = sqlite:///clarification.db
-database_url = postgres://asyudzoohjsfac:ec945cfcafd8a84b600a526a773217eab4b72138bb7b150fcc4cfc508dc84861@ec2-54-158-222-248.compute-1.amazonaws.com:5432/dehpk6oeq3sdqk
+database_url = sqlite:///clarification.db
+#database_url = postgres://asyudzoohjsfac:ec945cfcafd8a84b600a526a773217eab4b72138bb7b150fcc4cfc508dc84861@ec2-54-158-222-248.compute-1.amazonaws.com:5432/dehpk6oeq3sdqk
 
 [Server Parameters]
-host = 0.0.0.0
-#host = localhost
+#host = 0.0.0.0
+host = localhost
 port = 22362
 cutoff_time = 60
 logfile = server.log
@@ -32,7 +32,7 @@ secret_key = 'change this'
 
 [Task Parameters]
 experiment_code_version = 1.0
-num_conds = 16
+num_conds = 2
 num_counters = 1
 
 [Shell Parameters]
@@ -44,5 +44,6 @@ launch_in_sandbox_mode = true
 
 use_psiturk_ad_server = false
 # Your heroku app url
-ad_location = https://gentle-beach-49226.herokuapp.com/pub
+ad_location = https://<url>
+# ad_location = https://gentle-beach-49226.herokuapp.com/pub
 # ad_location = https://frozen-wave-83600.herokuapp.com/pub Example heroku app url
