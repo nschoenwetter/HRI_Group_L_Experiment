@@ -62,6 +62,7 @@ else {
     command_vid = "/static/videos/aggressive"
 }
 
+var question_label = command_vid;
 /********************
  * HTML manipulation
  *
@@ -86,41 +87,41 @@ var DemoQuestionnaire = function() {
     record_responses = function() {
 
         psiTurk.recordUnstructuredData("condition",mycondition);
-	//alert(mycondition);
+   //alert(mycondition);
 
-	psiTurk.recordTrialData({'phase':'demoquestionnaire', 'status':'submit'});
+   psiTurk.recordTrialData({'phase':'demoquestionnaire', 'status':'submit'});
 
-	$('input[name=age]').each( function(i, val) {
-	    psiTurk.recordUnstructuredData(this.id, this.value);
-	});
+   $('input[name=age]').each( function(i, val) {
+       psiTurk.recordUnstructuredData(this.id, this.value);
+   });
 
-	var radio_groups = {}
-	$(":radio").each(function(i, val){
-	    radio_groups[this.name] = true;
-	})
+   var radio_groups = {}
+   $(":radio").each(function(i, val){
+       radio_groups[this.name] = true;
+   })
 
-	    for(group in radio_groups){
-	        psiTurk.recordUnstructuredData(group,$(":radio[name='"+group+"']:checked").val());
-	    }
+       for(group in radio_groups){
+           psiTurk.recordUnstructuredData(group,$(":radio[name='"+group+"']:checked").val());
+       }
 
     };
 
     prompt_resubmit = function() {
-	replaceBody(error_message);
-	$("#resubmit").click(resubmit);
+   replaceBody(error_message);
+   $("#resubmit").click(resubmit);
     };
 
     resubmit = function() {
-	replaceBody("<h1>Trying to resubmit...</h1>");
-	reprompt = setTimeout(prompt_resubmit, 10000);
+   replaceBody("<h1>Trying to resubmit...</h1>");
+   reprompt = setTimeout(prompt_resubmit, 10000);
 
-	psiTurk.saveData({
-	    success: function() {
-		clearInterval(reprompt);
+   psiTurk.saveData({
+       success: function() {
+      clearInterval(reprompt);
 
-	    },
-	    error: prompt_resubmit
-	});
+       },
+       error: prompt_resubmit
+   });
     };
 
     // Load the questionnaire snippet
@@ -131,52 +132,52 @@ var DemoQuestionnaire = function() {
     var r1, r2 = false;
 
     (function() {
-	var empty = true;
-	$('#age').keyup(function() {
+   var empty = true;
+   $('#age').keyup(function() {
 
             empty = false;
             $('#age').each(function() {
-		if ($(this).val() == '' || $(this).val() < 18 || $(this).val() > 110) {
+      if ($(this).val() == '' || $(this).val() < 18 || $(this).val() > 110) {
                     empty = true;
-		}
+      }
             });
 
             if (empty) {
-		 r1 = false;
-		 checkenable();
+       r1 = false;
+       checkenable();
             } else {
-		r1 = true;
-		checkenable();
+      r1 = true;
+      checkenable();
             }
-	});
+   });
     })()
 
     $("input[name=gender]").change(function(){
-	r2=true;
-	checkenable();
+   r2=true;
+   checkenable();
     });
 
     function checkenable(){
-	if (r1 && r2){
-	    $('#next').removeAttr('disabled');
-	}
-	else {
-	    $('#next').prop('disabled', true);
-	}
+   if (r1 && r2){
+       $('#next').removeAttr('disabled');
+   }
+   else {
+       $('#next').prop('disabled', true);
+   }
     }
 
     $("#next").click(function () {
-    	record_responses();
+       record_responses();
 
-	psiTurk.saveData({
-	    success: function() {
-		clearInterval(reprompt);
+   psiTurk.saveData({
+       success: function() {
+      clearInterval(reprompt);
 
-	    },
-	    error: prompt_resubmit
-	});
+       },
+       error: prompt_resubmit
+   });
 
-	currentview = new VidCheck();
+   currentview = new VidCheck();
     });
 };
 
@@ -346,28 +347,28 @@ var Questions = function() {
 
     // Note that the phase is updated to reflect the new within-subjects assignment.
     record_responses = function() {
-        psiTurk.recordTrialData({'phase':'questions_'+response_vid, 'status':'submit'});
+        psiTurk.recordTrialData({'phase':'questions_'+command_vid, 'status':'submit'});
         for(i=1; i<=5; i++){
             psiTurk.recordUnstructuredData(question_label +"_"+i,$("input[name='"+i+"']").val());
         }
     };
 
     prompt_resubmit = function() {
-	replaceBody(error_message);
-	$("#resubmit").click(resubmit);
+   replaceBody(error_message);
+   $("#resubmit").click(resubmit);
     };
 
     resubmit = function() {
-	replaceBody("<h1>Trying to resubmit...</h1>");
-	reprompt = setTimeout(prompt_resubmit, 10000);
+   replaceBody("<h1>Trying to resubmit...</h1>");
+   reprompt = setTimeout(prompt_resubmit, 10000);
 
-	psiTurk.saveData({
-	    success: function() {
-		clearInterval(reprompt);
+   psiTurk.saveData({
+       success: function() {
+      clearInterval(reprompt);
 
-	    },
-	    error: prompt_resubmit
-	});
+       },
+       error: prompt_resubmit
+   });
     };
 
     // Load the questionnaire snippet
@@ -394,6 +395,7 @@ var Questions = function() {
 
     $("#next").click(function () {
         record_responses();
+        question_label = command_vid;
         currentview = new CheckQuestion();
     });
 
@@ -412,35 +414,35 @@ var CheckQuestion = function() {
 
     record_responses = function() {
 
-	psiTurk.recordTrialData({'phase':'checkquestion', 'status':'submit'});
+   psiTurk.recordTrialData({'phase':'checkquestion', 'status':'submit'});
 
-	var radio_groups = {}
-	$(":radio").each(function(i, val){
-	    radio_groups[this.name] = true;
-	})
+   var radio_groups = {}
+   $(":radio").each(function(i, val){
+       radio_groups[this.name] = true;
+   })
 
-	    for(group in radio_groups){
-	        psiTurk.recordUnstructuredData(group,$(":radio[name='"+group+"']:checked").val());
-	    }
+       for(group in radio_groups){
+           psiTurk.recordUnstructuredData(group,$(":radio[name='"+group+"']:checked").val());
+       }
 
     };
 
     prompt_resubmit = function() {
-	replaceBody(error_message);
-	$("#resubmit").click(resubmit);
+   replaceBody(error_message);
+   $("#resubmit").click(resubmit);
     };
 
     resubmit = function() {
-	replaceBody("<h1>Trying to resubmit...</h1>");
-	reprompt = setTimeout(prompt_resubmit, 10000);
+   replaceBody("<h1>Trying to resubmit...</h1>");
+   reprompt = setTimeout(prompt_resubmit, 10000);
 
-	psiTurk.saveData({
-	    success: function() {
-		clearInterval(reprompt);
+   psiTurk.saveData({
+       success: function() {
+      clearInterval(reprompt);
 
-	    },
-	    error: prompt_resubmit
-	});
+       },
+       error: prompt_resubmit
+   });
     };
 
     // Load the questionnaire snippet
@@ -449,13 +451,13 @@ var CheckQuestion = function() {
     psiTurk.recordTrialData({'phase':'checkquestion', 'status':'begin'});
 
     $("input[name=check]").change(function(){
-	$('#next').removeAttr('disabled');
+   $('#next').removeAttr('disabled');
     });
 
 
     $("#next").click(function () {
-    	record_responses();
-	psiTurk.saveData({
+       record_responses();
+   psiTurk.saveData({
             success: function(){
                 psiTurk.computeBonus('compute_bonus', function() {
                     psiTurk.completeHIT(); // when finished saving compute bonus, the quit
@@ -471,7 +473,7 @@ var CheckQuestion = function() {
  // You will likely leave this unchanged.
 $(window).load( function(){
     psiTurk.doInstructions(
-    	instructionPages, // a list of pages you want to display in sequence
-    	function() { currentview = new DemoQuestionnaire(); } // what you want to do when you are done with instructions
+       instructionPages, // a list of pages you want to display in sequence
+       function() { currentview = new DemoQuestionnaire(); } // what you want to do when you are done with instructions
     );
 });
